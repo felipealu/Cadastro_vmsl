@@ -1,7 +1,7 @@
 /* Estilo Geral */
 body {
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(rgb(156, 179, 159), rgb(88, 97, 89));
+  background: linear-gradient(to right, rgb(31, 68, 39), rgb(17, 56, 22));
   margin: 0;
   padding: 110px;
   text-align: center;
@@ -9,10 +9,26 @@ body {
   color: #444040;
 }
 
+#irparaleitor {
+  background-color: #638876;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 20%;
+  margin-top: 2px;
+}
+
+#irparaleitor:hover {
+  background-color: #63f58f;
+}
+
 /* Título Principal */
 h1 {
   font-size: 24px;
-  color: #121412;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -80,7 +96,7 @@ h1 {
 }
 
 #register:hover {
-  background-color: #243128;
+  background-color: #63f58f;
 }
 
 #gerar {
@@ -96,6 +112,10 @@ h1 {
   margin-bottom: 1px;
 }
 
+#gerar:hover {
+  background-color: #63f58f;
+}
+
 #sit_escola {
   width: 100%;
   padding: 10px;
@@ -109,22 +129,6 @@ h1 {
 
   box-sizing: border-box;
   background-color: #dadada;
-}
-#irparaleitor {
-  background-color: #557e65;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 12px 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 20%;
-  margin-top: 2px;
-}
-
-#irparaleitor:hover {
-  background-color: #243128;
 }
 
 #qrcode {
