@@ -1,22 +1,20 @@
+// variaveis da funçao relacionada a camera e canvas
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const outputData = document.getElementById("outputData");
 const context = canvas.getContext("2d");
 
 // Campos do formulário de cadastro
-const nomeField = document.getElementById("nome");
+const searchField = document.getElementById("nome");
 const identificacaoField = document.getElementById("identificacao");
 const veiculoField = document.getElementById("veiculo");
-const ruaField = document.getElementById("rua");
-const numeroField = document.getElementById("numero");
-const sitEscolaField = document.getElementById("sit_escola");
+const placaField = document.getElementById("placa");
 
 // Arrays para armazenar as informações lidas
 const nomes = [];
 const identificacoes = [];
 const veiculos = [];
-const rua = [];
-const numero = [];
+const placas = [];
 const sitescola = [];
 
 // Função para acessar a câmera
@@ -32,6 +30,7 @@ navigator.mediaDevices
     console.error("Erro ao acessar a câmera: " + err);
   });
 
+// Função para desenhar uma linha
 function tick() {
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
     canvas.hidden = false;
@@ -46,30 +45,32 @@ function tick() {
       try {
         // Tenta converter os dados do QR code para um objeto JSON
         const qrData = JSON.parse(code.data);
+        if (qrData.sit_escola === "1") {
+          document.getElementById("sit_escola").checked = true;
+        } else {
+          document.getElementById("sit_escola").checked = false;
+        }
 
         // Verifica se as informações já foram armazenadas
         if (
           !nomes.includes(qrData.name) &&
           !identificacoes.includes(qrData.identification) &&
           !veiculos.includes(qrData.vehicle) &&
-          !rua.includes(qrData.rua) &&
-          !numero.includes(qrData.numero) &&
+          !placas.includes(qrData.placa) &&
           !sitescola.includes(qrData.sit_escola)
         ) {
           // Armazena os novos dados nos arrays
           nomes.push(qrData.name);
           identificacoes.push(qrData.identification);
           veiculos.push(qrData.vehicle);
-          rua.push(qrData.rua);
-          numero.push(qrData.numero);
+          placas.push(qrData.placa);
           sitescola.push(qrData.sit_escola);
 
           // Preenche os campos do formulário com os dados do QR code
-          nomeField.value = qrData.name || "";
+          searchField.value = qrData.name || "";
           identificacaoField.value = qrData.identification || "";
           veiculoField.value = qrData.vehicle || "";
-          ruaField.value = qrData.rua || "";
-          numeroField.value = qrData.numero || "";
+          placaField.value = qrData.placa || "";
           sitEscolaField.value = qrData.sit_escola || "";
 
           // Atualiza a interface para mostrar os dados lidos
@@ -110,6 +111,7 @@ function tick() {
 }
 
 // Função para desenhar uma linha
+// está função é nescessaria para identificar o QR code isoladamente
 function drawLine(begin, end, color) {
   context.beginPath();
   context.moveTo(begin.x, begin.y);
