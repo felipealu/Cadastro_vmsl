@@ -7,8 +7,7 @@
     //     print_r($_POST['veiculo']);
     //     print_r('<br>');
     //
-    require_once '/Users/felip/Desktop/Faculdade/cadastro_qr/start/config.php';
-
+    require_once 'config.php';
     // if(!$conexao){
     //     die("Erro de conexão:" . $conexao->connect_error);
     // }
@@ -16,16 +15,22 @@
         $nome = $_POST["nome"];
         $identificacao = $_POST["identificacao"];
         $veiculo = $_POST["veiculo"];
-        $sit_escola = !empty($_POST["sit_escola"]) ? $_POST["sit_escola"] : "0";
+        $placa = $_POST["placa"];
+        if (isset($_POST['sit_escola']) && $_POST['sit_escola'] == 'on') {
+            $sit_escola = 1;
+        } else {
+            $sit_escola = 0;
+        }
         
     
-        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$sit_escola')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, placa, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$sit_escola')");
 
         // if (!$result) {
         //     die("Erro ao inserir dados: " . mysqli_error($conexao));
         // }
     }
-       
+    
+   
 ?>
 
 <!DOCTYPE html>
@@ -54,10 +59,13 @@
             <label for="identificacao">Identificação:</label>
             <input type="text" id="identificacao" name="identificacao" /><br /><br />
 
-            <label for="veiculo">Veículo/Placa:</label>
+            <label for="veiculo">Veículo:</label>
             <input type="text" id="veiculo" name="veiculo" /><br /><br />
 
-            <label for="sit_escola">Situação na Escola:</label> <br />
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" /><br /><br />
+
+            <label for="sit_escola">Cadastro Escola:</label> <br />
             <input type="checkbox" id="sit_escola" name="sit_escola" value="1" /><br /><br />
 
             <input type="hidden" name="token" value="<?php echo uniqid(); ?>">
@@ -73,27 +81,30 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
-    <script src="script2.js"></script>
-    <script src="script3.js"></script>
+    <script src="apigen2.js"></script>
+    <script src="arraygen2.js"></script>
 
     <script>
-    document
-        .getElementById("irparaleitor")
+    // Função para redirecionar para a página do gerador
+    document.getElementById("irparaleitor")
         .addEventListener("click", function() {
-            history.back();
+            // Substitua pelo nome do seu arquivo
+            window.location.href = "leitor.php";
         });
     </script>
+
+
     <script>
     document.getElementById("submit").addEventListener("click", function() {
         const nome = document.getElementById("nome").value;
         const identificacao = document.getElementById("identificacao").value;
         const veiculo = document.getElementById("veiculo").value;
-
+        const placa = document.getElementById("placa").value;
         const sit_escola = document.getElementById("sit_escola").value;
 
 
         // Verifica se os campos estão preenchidos
-        if (nome && identificacao && veiculo && sit_escola) {
+        if (nome && identificacao && veiculo && placa && sit_escola) {
             // Faz uma requisição AJAX para o PHP
             const xhr = new XMLHttpRequest();
             xhr.open("POST", "gen2.php");
@@ -105,11 +116,13 @@
                 }
             };
             xhr.send("$nome=" + encodeURIComponent(nome) + "&identificacao=" + encodeURIComponent(
-                    identificacao) + "&veiculo=" + encodeURIComponent(veiculo) + "&sit_escola=" +
+                    identificacao) + "&veiculo=" + encodeURIComponent(veiculo) + "&placa=" +
+                encodeURIComponent(placa) + "&sit_escola=" +
                 encodeURIComponent(sit_escola));
         }
     });
     </script>
+
 </body>
 
 </html>
