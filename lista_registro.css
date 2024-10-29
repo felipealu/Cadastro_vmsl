@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(to right, rgb(57, 99, 65), rgb(17, 56, 22));
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow-x: auto;
+}
+.navbar {
+  background: linear-gradient(to right, rgb(21, 85, 33), rgb(9, 32, 12));
+}
+.table-bg {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px 15px 0 0;
+  height: auto;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.box-search {
+  display: flex;
+  justify-content: center;
+  gap: 0.1%;
+}
+#btn-search {
+  background-color: #557e65;
+  border: none;
+}
+
+#btn-search:hover {
+  background-color: #63f58f;
+}
