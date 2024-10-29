@@ -2,8 +2,8 @@
 
     $dbHost = 'LocalHost';
     $dbUsername = 'root';
-    $dbPassword = 'root';
-    $dbName = 'loja1';
+    $dbPassword = 'admin';
+    $dbName = 'qrvila';
 
     $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 
