@@ -1,7 +1,7 @@
 /* Estilo Geral */
 body {
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(rgb(156, 179, 159), rgb(88, 97, 89));
+  background: linear-gradient(to right, rgb(31, 68, 39), rgb(17, 56, 22));
   margin: 0;
   padding: 20px;
   text-align: center;
@@ -11,13 +11,13 @@ body {
 /* Título Principal */
 h1 {
   font-size: 24px;
-  color: #2b3d30;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
 /* Estilo do vídeo */
 video {
-  border: 2px solid #2b3d30;
+  border: 2px solid #ffffff;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -27,10 +27,26 @@ canvas {
   display: none;
 }
 
+#irparagerar {
+  background-color: #638876;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 20%;
+  margin-top: 15px;
+}
+
+#irparagerar:hover {
+  background-color: #63f58f;
+}
 /* Mensagem de saída */
 #outputData {
   font-size: 16px;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -76,6 +92,68 @@ canvas {
   background-color: #dadada;
 }
 
+#saida {
+  width: 100%;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  background-color: #557e65;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#saida:hover {
+  background-color: #63f58f;
+}
+
+#pesquisar {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 97px;
+  margin-left: 550px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #557e65;
+  border: none;
+}
+
+#pesquisar:hover {
+  background-color: #2b3d30;
+}
+
+#sugestoes {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.829);
+  border: 1px solid #838383;
+  padding: 10px;
+  width: 300px;
+  margin: 58px;
+  margin-left: -20px;
+  border-radius: 2px;
+}
+
+#sugestoes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sugestoes li {
+  padding: 10px;
+  border-bottom: 1px solid #3f3e3e;
+  cursor: pointer;
+}
+
+#sugestoes li:hover {
+  background-color: #abd6b9;
+}
+
 /* Estilo do botão de cadastro */
 #register {
   background-color: #557e65;
@@ -90,24 +168,7 @@ canvas {
 }
 
 #register:hover {
-  background-color: #243128;
-}
-
-#irparagerar {
-  background-color: #557e65;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 12px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 20%;
-  margin-top: 15px;
-}
-
-#irparagerar:hover {
-  background-color: #243128;
+  background-color: #63f58f;
 }
 
 #sit_escola {
