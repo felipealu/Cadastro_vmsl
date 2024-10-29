@@ -23,7 +23,7 @@
         }
         
     
-        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, placa, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$sit_escola')");
+        $result = mysqli_query($conexao, "INSERT INTO cadastro (idcadastro, nome, identificacao, veiculo, placa, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$sit_escola')");
 
         // if (!$result) {
         //     die("Erro ao inserir dados: " . mysqli_error($conexao));
