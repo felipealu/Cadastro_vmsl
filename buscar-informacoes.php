@@ -4,7 +4,7 @@
 
     $nome = $_POST["nome"];
 
-    $query = "SELECT identificacao, veiculo, placa, , entrada, saida FROM relatorio WHERE nome = '$nome'";
+    $query = "SELECT identificacao, veiculo, placa, sit_escola FROM cadastro WHERE nome = '$nome'";
     $result = mysqli_query($conn, $query);
 
     $data = array();
