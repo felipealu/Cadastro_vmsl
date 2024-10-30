@@ -120,13 +120,7 @@
     </script>
 
      <!-- Conteúdo do site -->
-    <script>
-    window.addEventListener('load', function() {
-        if (window.location.protocol !== 'https:') {
-            window.location.href = 'https://' + window.location.host + window.location.pathname;
-        }
-    });
-    </script>
+   
     
 
     <script>
