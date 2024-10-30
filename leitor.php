@@ -121,9 +121,11 @@
 
      <!-- Conteúdo do site -->
     <script>
-    if (window.location.protocol !== 'https:') {
-        window.location.href = 'https://' + window.location.host + window.location.pathname;
-    }
+    window.addEventListener('load', function() {
+        if (window.location.protocol !== 'https:') {
+            window.location.href = 'https://' + window.location.host + window.location.pathname;
+        }
+    });
     </script>
     
 
