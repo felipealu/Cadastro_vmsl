@@ -1,6 +1,6 @@
 <?php
     
-    $conn = mysqli_connect("localhost", "root", "root", "loja1");
+    $conn = mysqli_connect("localhost", "root", "admin", "qrvila");
 
     $nome = $_POST["nome"];
 
