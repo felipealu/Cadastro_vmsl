@@ -1,9 +1,9 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "admin", "qrvila");
+$conn = mysqli_connect("localhost", "root", "root", "loja1");
 
 $nome = $_POST["nome"];
 
-$query = "SELECT nome FROM cadastro WHERE nome LIKE '%$nome%'";
+$query = "SELECT nome FROM relatorio WHERE nome LIKE '%$nome%'";
 
 $result = mysqli_query($conn, $query);
 
