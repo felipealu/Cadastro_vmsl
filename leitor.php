@@ -119,6 +119,13 @@
         });
     </script>
 
+     <!-- Conteúdo do site -->
+    <script>
+    if (window.location.protocol !== 'https:') {
+        window.location.href = 'https://' + window.location.host + window.location.pathname;
+    }
+    </script>
+    
 
     <script>
     // cadastra individualmente cada informação ao apertar "cadastrar"
