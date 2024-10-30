@@ -92,14 +92,41 @@ canvas {
   background-color: #dadada;
 }
 
-#saida {
-  width: 100%;
+#relatorio {
+  cursor: pointer;
+
+  position: absolute;
+  width: 100px;
   color: #ffffff;
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-top: 700px;
+  margin-right: 150px;
+
+  box-sizing: border-box;
+  background-color: #557e65;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#relatorio:hover {
+  background-color: #63f58f;
+}
+#saida {
+  cursor: pointer;
+
+  position: absolute;
+  width: 100px;
+  color: #ffffff;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin-top: 700px;
+  margin-left: 150px;
+
   box-sizing: border-box;
   background-color: #557e65;
   text-decoration: none;
@@ -160,7 +187,7 @@ canvas {
   color: #ffffff;
   border: none;
   border-radius: 5px;
-  padding: 12px 20px;
+  padding: 12px 30px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
