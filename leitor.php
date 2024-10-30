@@ -20,7 +20,11 @@
         $rua = $_POST["rua"];
         $numero = $_POST["numero"];
         
-        $sit_escola = $_POST["sit_escola"] == "on" ? 1 : 0;
+        if (isset($_POST['sit_escola']) && $_POST['sit_escola'] !== '') {
+            $sit_escola = 1;
+        } else {
+            $sit_escola = 0;
+        }
 
         
         
@@ -97,6 +101,7 @@
             <label for="sit_escola">Cadastro Escolar:</label> <br />
             <input type="checkbox" id="sit_escola" name="sit_escola" value="true" /><br /><br />
             <a id="saida" href="lista_registro.php"> Saida</a> <br /><br />
+            <a id="relatorio" href="relatorio.php"> Relatório</a> <br /><br />
             <input type="hidden" name="token" value="<?php echo uniqid(); ?>">
             <button type="submit" id="register" nome="submit">Cadastrar</button>
         </form>
