@@ -109,7 +109,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
     <script src="leitor.js"></script>
-
+    
+    <script>
+    navigator.mediaDevices.getUserMedia({
+            video: true
+        })
+        .then(stream => {
+            console.log('Câmera acessada com sucesso!');
+        })
+        .catch(error => {
+            console.error('Erro ao acessar a câmera:', error);
+        });
+    </script>
+    
     <script>
     // Função para redirecionar para a página do gerador
     document.getElementById("irparagerar")
