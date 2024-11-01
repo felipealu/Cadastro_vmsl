@@ -16,6 +16,7 @@ document.addEventListener("keypress", (e) => {
 gerarButton.addEventListener("click", () => {
   console.log("Botão de gerar clicado");
   genQRCode();
+  sendwhatsapp();
 });
 
 sitEscola.addEventListener("change", () => {
@@ -41,4 +42,38 @@ function genQRCode() {
     jsonString
   )}`;
   console.log("QRCode gerado:", qrcode.src);
+}
+
+function sendwhatsapp() {
+  const phonenumber = "+555481685893";
+
+  // Pegar a imagem
+  const imagem = document.getElementById("qrcode");
+
+  // Adicionar evento load à imagem
+  imagem.onload = function () {
+    // Pegar o conteúdo do objeto data
+    const sitEscolaValue = sitEscola.checked ? "1" : "0";
+    const data = {
+      name: nomeCompleto.value,
+      identification: ident.value,
+      vehicle: loco.value,
+      placa: placaID.value,
+      sit_escola: sitEscolaValue,
+    };
+
+    // Converter o objeto data em uma string
+    const dataString = JSON.stringify(data);
+
+    // Adicionar o conteúdo do objeto data ao QR Code
+    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(
+      dataString
+    )}&size=150x150&background=${encodeURIComponent(
+      "https://tecnodefesa.com.br/wp-content/uploads/2020/02/AGR.jpg"
+    )}`;
+
+    // Enviar o link para o WhatsApp
+    const whatsappUrl = `https://wa.me/${phonenumber}?text=${qrCodeUrl}`;
+    window.open(whatsappUrl, "_blank").focus();
+  };
 }
