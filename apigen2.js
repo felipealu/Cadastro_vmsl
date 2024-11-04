@@ -72,8 +72,16 @@ function sendwhatsapp() {
       "https://tecnodefesa.com.br/wp-content/uploads/2020/02/AGR.jpg"
     )}`;
 
-    // Enviar o link para o WhatsApp
-    const whatsappUrl = `https://wa.me/${phonenumber}?text=${qrCodeUrl}`;
-    window.open(whatsappUrl, "_blank").focus();
+    // Encurtar o link usando o TinyURL
+    const tinyUrl = `https://tinyurl.com/api-create.php?url=${qrCodeUrl}`;
+
+    // Enviar o link encurtado para o WhatsApp
+    const shortenedUrl = fetch(tinyUrl)
+      .then((response) => response.text())
+      .then((shortenedUrl) => {
+        const mensagem = "Segue o QR Code para escaneamento: ";
+        const whatsappUrl = `https://wa.me/${phonenumber}?text=${mensagem}${shortenedUrl}`;
+        window.open(whatsappUrl, "_blank").focus();
+      });
   };
 }
