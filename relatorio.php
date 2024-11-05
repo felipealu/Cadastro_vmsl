@@ -24,7 +24,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lista_registro.css">
+    <link rel="stylesheet" href="/css/lista_registro.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>RELATORIO</title>
@@ -42,6 +42,7 @@
         </div>
         <div class="d-flex">
             <a href="leitor.php" class="btn btn-danger me-5">Sair</a>
+            <a href="pdf.php" class="btn btn-danger me-5">GERAR PDF</a>
         </div>
     </nav>
     <br>
@@ -96,6 +97,8 @@
         </table>
     </div>
 </body>
+
+
 <script>
 var search = document.getElementById('pesquisar');
 
@@ -109,5 +112,8 @@ function searchData() {
     window.location = 'relatorio.php?search=' + search.value;
 }
 </script>
+
+
+
 
 </html>
