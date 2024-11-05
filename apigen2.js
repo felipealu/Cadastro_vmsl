@@ -76,12 +76,22 @@ function sendwhatsapp() {
     const tinyUrl = `https://tinyurl.com/api-create.php?url=${qrCodeUrl}`;
 
     // Enviar o link encurtado para o WhatsApp
-    const shortenedUrl = fetch(tinyUrl)
+    fetch(tinyUrl)
       .then((response) => response.text())
       .then((shortenedUrl) => {
         const mensagem = "Segue o QR Code para escaneamento: ";
         const whatsappUrl = `https://wa.me/${phonenumber}?text=${mensagem}${shortenedUrl}`;
+
+        // Enviar a primeira mensagem com o link
         window.open(whatsappUrl, "_blank").focus();
+
+        // Enviar a segunda mensagem com a mensagem de texto
+        const mensagemTexto = "Seguem as informações adicionadas ao QR Code: ";
+        const whatsappTextoUrl = `https://wa.me/${phonenumber}?text=${mensagemTexto}${JSON.stringify(
+          data
+        )}`;
+
+        window.open(whatsappTextoUrl, "_blank").focus();
       });
   };
 }
