@@ -45,7 +45,7 @@ function genQRCode() {
 }
 
 function sendwhatsapp() {
-  const phonenumber = "+555481685893";
+  const phonenumber = "+5521972180375";
 
   // Pegar a imagem
   const imagem = document.getElementById("qrcode");
