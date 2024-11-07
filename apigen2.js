@@ -2,6 +2,7 @@ const nomeCompleto = document.querySelector("#nome");
 const ident = document.querySelector("#identificacao");
 const loco = document.querySelector("#veiculo");
 const placaID = document.querySelector("#placa");
+const cel = document.querySelector("#celular");
 const sitEscola = document.querySelector("#sit_escola");
 const qrcode = document.querySelector("#qrcode");
 const gerarButton = document.querySelector("#gerar");
@@ -33,6 +34,7 @@ function genQRCode() {
     identification: ident.value,
     vehicle: loco.value,
     placa: placaID.value,
+    celular: cel.value,
     sit_escola: sitEscolaValue,
   };
   console.log("Objeto data criado:", data);
@@ -59,6 +61,8 @@ function sendwhatsapp() {
       identification: ident.value,
       vehicle: loco.value,
       placa: placaID.value,
+      celular: cel.value,
+
       sit_escola: sitEscolaValue,
     };
 
