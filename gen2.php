@@ -39,7 +39,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerador de QR Code com Cadastro</title>
-    <link rel="stylesheet" href="gerador.css" />
+    <link rel="stylesheet" href="/css/gerador.css" />
 </head>
 
 <body>
@@ -53,19 +53,23 @@
         <h3>Cadastro</h3>
         <form action="gen2.php" method="POST">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" /><br /><br />
+            <input type="text" id="nome" name="nome" placeholder="Digite o Nome" /><br /><br />
 
             <label for="identificacao">Identificação:</label>
-            <input type="text" id="identificacao" name="identificacao" /><br /><br />
+            <input type="text" id="identificacao" name="identificacao" placeholder="Digite o CPF" /><br /><br />
 
             <label for="veiculo">Veículo:</label>
-            <input type="text" id="veiculo" name="veiculo" /><br /><br />
+            <input type="text" id="veiculo" name="veiculo" placeholder="Digite o Veículo" /><br /><br />
 
             <label for="placa">Placa:</label>
-            <input type="text" id="placa" name="placa" /><br /><br />
+            <input type="text" id="placa" name="placa" placeholder="Digite a Placa" /><br /><br />
+
+            <label for="celular">Celular:</label> <br />
+            <input type="text" id="celular" name="cel" placeholder="Digite o Celular" /><br /><br />
 
             <label for="sit_escola">Cadastro Escola:</label> <br />
             <input type="checkbox" id="sit_escola" name="sit_escola" value="1" /><br /><br />
+
 
             <input type="hidden" name="token" value="<?php echo uniqid(); ?>">
             <button type="submit" id="register" nome="submit">Cadastrar</button>
@@ -79,9 +83,12 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
-    <script src="apigen2.js"></script>
-    <script src="arraygen2.js"></script>
+
+    <script src=" https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/dist/qrcode.min.js"></script>
+    <script src="/js/apigen2.js"></script>
+    <script src="/js/arraygen2.js"></script>
 
     <script>
     // Função para redirecionar para a página do gerador
