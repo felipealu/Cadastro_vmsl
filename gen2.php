@@ -23,7 +23,7 @@
             $sit_escola = 0;
         }
         
-        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, placa, celular, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$celular', '$sit_escola')");
+        $result = mysqli_query($conexao, "INSERT INTO cadastros (idcadastro, nome, identificacao, veiculo, placa, celular, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$celular', '$sit_escola')");
     
         // if (!$result) {
         //     die("Erro ao inserir dados: " . mysqli_error($conexao));
@@ -45,7 +45,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerador de QR Code com Cadastro</title>
-    <link rel="stylesheet" href="/css/gerador.css" />
+    <link rel="stylesheet" href="gen2.css" />
 </head>
 
 <body>
@@ -93,8 +93,8 @@
     <script src=" https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/dist/qrcode.min.js"></script>
-    <script src="/js/apigen2.js"></script>
-    <script src="/js/arraygen2.js"></script>
+    <script src="apigen2.js"></script>
+    <script src="arraygen2.js"></script>
 
     <script>
     // Função para redirecionar para a página do gerador
