@@ -16,19 +16,24 @@
         $identificacao = $_POST["identificacao"];
         $veiculo = $_POST["veiculo"];
         $placa = $_POST["placa"];
-        // $celular = $_POST["celular"];
+        $celular = $_POST["celular"]; // Adicionei essa linha
         if (isset($_POST['sit_escola']) && $_POST['sit_escola'] !== '') {
             $sit_escola = 1;
         } else {
             $sit_escola = 0;
         }
+        
+        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, placa, celular, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$celular', '$sit_escola')");
     
-        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, placa,  sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$sit_escola')");
-
         // if (!$result) {
         //     die("Erro ao inserir dados: " . mysqli_error($conexao));
         // }
     }
+
+        // if (!$result) {
+        //     die("Erro ao inserir dados: " . mysqli_error($conexao));
+        // }
+            
     
    
 ?>
