@@ -16,13 +16,14 @@
         $identificacao = $_POST["identificacao"];
         $veiculo = $_POST["veiculo"];
         $placa = $_POST["placa"];
+        $celular = $_POST["celular"];
         if (isset($_POST['sit_escola']) && $_POST['sit_escola'] !== '') {
             $sit_escola = 1;
         } else {
             $sit_escola = 0;
         }
     
-        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, placa, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$sit_escola')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios (idcadastro, nome, identificacao, veiculo, placa, celular, sit_escola) VALUES (NULL, '$nome', '$identificacao', '$veiculo', '$placa', '$celular', '$sit_escola')");
 
         // if (!$result) {
         //     die("Erro ao inserir dados: " . mysqli_error($conexao));
@@ -65,7 +66,7 @@
             <input type="text" id="placa" name="placa" placeholder="Digite a Placa" /><br /><br />
 
             <label for="celular">Celular:</label> <br />
-            <input type="text" id="celular" name="cel" placeholder="Digite o Celular" /><br /><br />
+            <input type="text" id="celular" name="celular" placeholder="Digite o Celular" /><br /><br />
 
             <label for="sit_escola">Cadastro Escola:</label> <br />
             <input type="checkbox" id="sit_escola" name="sit_escola" value="1" /><br /><br />
@@ -106,11 +107,12 @@
         const identificacao = document.getElementById("identificacao").value;
         const veiculo = document.getElementById("veiculo").value;
         const placa = document.getElementById("placa").value;
+        const celular = document.getElementById("celular").value;
         const sit_escola = document.getElementById("sit_escola").value;
 
 
         // Verifica se os campos estão preenchidos
-        if (nome && identificacao && veiculo && placa && sit_escola) {
+        if (nome && identificacao && veiculo && placa && celular && sit_escola) {
             // Faz uma requisição AJAX para o PHP
             const xhr = new XMLHttpRequest();
             xhr.open("POST", "gen2.php");
@@ -123,7 +125,8 @@
             };
             xhr.send("$nome=" + encodeURIComponent(nome) + "&identificacao=" + encodeURIComponent(
                     identificacao) + "&veiculo=" + encodeURIComponent(veiculo) + "&placa=" +
-                encodeURIComponent(placa) + "&sit_escola=" +
+                encodeURIComponent(placa) + "&celular=" +
+                encodeURIComponent(celular) + "&sit_escola=" +
                 encodeURIComponent(sit_escola));
         }
     });
