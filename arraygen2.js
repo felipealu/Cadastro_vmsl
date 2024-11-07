@@ -3,6 +3,7 @@ const nomeField = document.getElementById("nome");
 const identificacaoField = document.getElementById("identificacao");
 const veiculoField = document.getElementById("veiculo");
 const placaField = document.getElementById("placa");
+const celularField = document.getElementById("celular");
 const sitEscolaField = document.getElementById("sit_escola");
 
 // Arrays para armazenar as informações lidas
@@ -10,6 +11,7 @@ const nomes = [];
 const identificacoes = [];
 const veiculos = [];
 const placas = [];
+const celulares = [];
 const sitescola = [];
 
 function tick() {
@@ -24,6 +26,7 @@ function tick() {
         !identificacoes.includes(qrData.identification) &&
         !veiculos.includes(qrData.vehicle) &&
         !placas.includes(qrData.placa) &&
+        !celulares.includes(qrData.celular) &&
         !sitescola.includes(qrData.sit_escola)
       ) {
         // Armazena os novos dados nos arrays
@@ -31,6 +34,7 @@ function tick() {
         identificacoes.push(qrData.identification);
         veiculos.push(qrData.vehicle);
         placas.push(qrData.placa);
+        celulares.push(qrData.celular);
         sitescola.push(qrData.sit_escola);
 
         // Preenche os campos do formulário com os dados do QR code
@@ -38,6 +42,7 @@ function tick() {
         identificacaoField.value = qrData.identification || "";
         veiculoField.value = qrData.vehicle || "";
         placaField.value = qrData.placa || "";
+        celularField.value = qrData.celular || "";
         sitEscolaField.value = qrData.sit_escola || "";
 
         // Atualiza a interface para mostrar os dados lidos
