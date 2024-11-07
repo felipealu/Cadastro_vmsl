@@ -16,7 +16,11 @@
         $identificacao = $_POST["identificacao"];
         $veiculo = $_POST["veiculo"];
         $placa = $_POST["placa"];
-        $celular = $_POST["celular"]; // Adicionei essa linha
+        if (!empty($_POST["celular"]) && is_numeric($_POST["celular"])) {
+            $celular = $_POST["celular"];
+        } else {
+            $celular = 0; // ou algum outro valor padrão
+        }
         if (isset($_POST['sit_escola']) && $_POST['sit_escola'] !== '') {
             $sit_escola = 1;
         } else {
