@@ -86,12 +86,39 @@
 
             <label for="rua">Escolha uma Rua:</label>
 
+            <label for="rua">Escolha uma Rua:</label>
+
             <select id="rua" name="rua">
                 <option value="">Selecione a Rua...</option>
+                <option value="RUA CEL AQUILES PEDENEIRAS">RUA CEL AQUILES PEDENEIRAS</option>
+                <option value="RUA CEL AMAURY">RUA CEL AMAURY</option>
+                <option value="RUA CEL ANDRADE NEVES">RUA CEL ANDRADE NEVES</option>
+                <option value="RUA CEL CASTRO JUNIOR">RUA CEL CASTRO JUNIOR</option>
+                <option value="RUA CEL ESPIRIDAO ROSAS">RUA CEL ESPIRIDAO ROSAS</option>
+                <option value="RUA CEL FIUZA DE CASTRO">RUA CEL FIUZA DE CASTRO</option>
+                <option value="RUA CEL HASTIMPHILO DE MOURA">RUA CEL HASTIMPHILO DE MOURA</option>
+                <option value="RUA CEL LINDOLPHO SERRA">RUA CEL LINDOLPHO SERRA</option>
+                <option value="RUA CEL MARTINS PEREIRA">RUA CEL MARTINS PEREIRA</option>
+                <option value="RUA CEL PEDRO IVO">RUA CEL PEDRO IVO</option>
                 <option value="RUA CEL SILIO PORTELA">RUA CEL SILIO PORTELA</option>
-                <option value="RUA GEN PONDÉ">RUA GEN PONDÉ</option>
+                <option value="RUA CEL UCHOA">RUA CEL UCHOA</option>
+                <option value="RUA DA INDUSTRIA">RUA DA INDUSTRIA</option>
+                <option value="RUA DUQUE DE CAXIAS">RUA DUQUE DE CAXIAS</option>
+                <option value="RUA GEN ALTAIR">RUA GEN ALTAIR</option>
+                <option value="RUA GEN OCTAVIO">RUA GEN OCTAVIO</option>
+                <option value="RUA GEN PARGAS RODRIGUES">RUA GEN PARGAS RODRIGUES</option>
+                <option value="RUA GEN PONDE">RUA GEN PONDE</option>
                 <option value="RUA GEN WEDMAN">RUA GEN WEDMAN</option>
-                <option value="RUA CEL AQUILES PERDENEIRAS">RUA CEL AQUILES PERDENEIRAS</option>
+                <option value="RUA MAJ DOUTOR AZEVEDO">RUA MAJ DOUTOR AZEVEDO</option>
+                <option value="RUA MESTRE CAMARGO">RUA MESTRE CAMARGO</option>
+                <option value="RUA MESTRE JORGE">RUA MESTRE JORGE</option>
+                <option value="RUA MESTRE NUNO">RUA MESTRE NUNO</option>
+                <option value="RUA MESTRE SADOCK DE SA">RUA MESTRE SADOCK DE SA</option>
+                <option value="RUA PARANA">RUA PARANA</option>
+                <option value="RUA SAMUEL DA SILVA CALDAS">RUA SAMUEL DA SILVA CALDAS</option>
+                <option value="IGREJA">IGREJA</option>
+                <option value="GREMIO">GREMIO</option>
+                <option value="PNRS">PNRS</option>
 
             </select><br /><br />
 
