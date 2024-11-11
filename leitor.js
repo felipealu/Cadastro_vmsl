@@ -16,6 +16,7 @@ const identificacoes = [];
 const veiculos = [];
 const placas = [];
 const sitescola = [];
+const sitservice = [];
 
 // Função para acessar a câmera
 navigator.mediaDevices
@@ -57,7 +58,8 @@ function tick() {
           !identificacoes.includes(qrData.identification) &&
           !veiculos.includes(qrData.vehicle) &&
           !placas.includes(qrData.placa) &&
-          !sitescola.includes(qrData.sit_escola)
+          !sitescola.includes(qrData.sit_escola) &&
+          !sitservice.includes(qrData.sit_service)
         ) {
           // Armazena os novos dados nos arrays
           nomes.push(qrData.name);
@@ -65,6 +67,7 @@ function tick() {
           veiculos.push(qrData.vehicle);
           placas.push(qrData.placa);
           sitescola.push(qrData.sit_escola);
+          sitservice.push(qrData.sit_escola);
 
           // Preenche os campos do formulário com os dados do QR code
           searchField.value = qrData.name || "";
@@ -72,6 +75,7 @@ function tick() {
           veiculoField.value = qrData.vehicle || "";
           placaField.value = qrData.placa || "";
           sitEscolaField.value = qrData.sit_escola || "";
+          sitServiceField.value = qrData.sit_service || "";
 
           // Atualiza a interface para mostrar os dados lidos
           outputData.innerText = "Dados preenchidos automaticamente.";
